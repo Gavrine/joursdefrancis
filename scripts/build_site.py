@@ -511,14 +511,11 @@ def main() -> None:
     sections = []
     for annee, liste in par_annee.items():
         items = "\n".join(
-            f"""    <li><a href="/archives/{c['slug']}/"><time datetime="{c['send_time'][:10]}">{c['date_fr'].rsplit(' ', 1)[0]}</time>
-      <span class="t">{html.escape(c['titre_aff'])}</span>
-      <span class="c">{c['chapeau']}</span></a></li>"""
+            f"""    <li><a href="/archives/{c['slug']}/"><span class="t">{html.escape(c['titre_aff'])}</span></a></li>"""
             for c in liste)
-        sections.append(f'<section class="annee"><h2>{annee}</h2>\n  <ul class="liste">\n{items}\n  </ul></section>')
+        sections.append(f'<section class="annee"><h2>{annee}</h2>\n  <ul class="liste simple">\n{items}\n  </ul></section>')
     corps = f"""<header class="intro">
   <h1>Archives</h1>
-  <p>{len(retenues)} infolettres, de {retenues[0]['date_fr'].split(' ', 1)[1] if retenues else ''} à aujourd'hui.</p>
 </header>
 {''.join(sections)}"""
     (OUT / "archives").mkdir(exist_ok=True)

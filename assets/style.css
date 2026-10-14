@@ -94,6 +94,8 @@ main { padding: 0 1rem; }
 .liste a:hover .t { color: var(--accent); }
 .liste .c { color: var(--gris); font-size: 1.02rem; line-height: 1.45; margin-top: .2rem; }
 .liste .c:empty { display: none; }
+.liste.simple a { display: block; padding: .55rem 0; }
+.liste.simple li { border-bottom: 0; }
 
 /* archives */
 .intro { max-width: var(--mesure); margin: 0 auto; padding: 3.5rem 0 1.5rem; }
