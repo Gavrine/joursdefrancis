@@ -13,10 +13,9 @@
     "description": "Jours de Francis, le journal intime au million d’abonnés : une infolettre littéraire, drôle et mélancolique, à recevoir gratuitement.",
     "image": "chien-web.jpg",
     "presentation": [
-      "Depuis 2016, Francis tient son journal et l’envoie par courriel à qui veut bien le lire. On y croise un voisin nommé Jean-Marie, une chatonne <em>mackerel tabby white</em>, une Vespa qui rend l’âme devant la gare, Barbara, Chopin, un père qui ne revient pas, et toutes sortes de petites catastrophes que la vie inflige à un homme d’âge mûr installé sur les hauteurs de Cadillac.",
-      "C’est souvent drôle, parfois triste, presque toujours vrai."
+      "Un journal intime publié sous forme d’infolettre depuis 2016. Chaque envoi rassemble des récits tirés du quotidien : un voisin, une chatte, un voyage à Tanger, un concert à Nohant, la mort d’un père."
     ],
-    "rassurance": "Gratuit, sans publicité. Une lettre quand il y a quelque chose à raconter, ce qui arrive plus souvent que Francis ne le voudrait."
+    "rassurance": "Gratuit et sans publicité. Désinscription en un clic depuis chaque lettre."
   },
   "livre": {
     "titre": "Passer janvier",
@@ -33,9 +32,9 @@
     "etiquette": "En vidéo",
     "titre": "Infra-ordinaire",
     "presentation": [
-      "La chaîne YouTube de Francis. <em>Texte à compléter.</em>"
+      "Courts métrages expérimentaux, autour de l’infra-ordinaire et des banalités, sur YouTube."
     ],
-    "lien": "https://www.youtube.com/results?search_query=Infra-ordinaire",
+    "lien": "https://www.youtube.com/@infra.ordinaire",
     "bouton": "Voir la chaîne"
   },
   "images": {
