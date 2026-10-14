@@ -521,8 +521,10 @@ def main() -> None:
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
+    lourds = set(cfg.get("images", {}))  # originaux rapatriés de l'ancien site, non utilisés tels quels
     for f in ASSETS.iterdir():
-        shutil.copy(f, OUT / f.name)
+        if f.name not in lourds:
+            shutil.copy(f, OUT / f.name)
     prefixe = os.environ.get("JDF_BASE", cfg.get("base", "")).rstrip("/")
     if os.environ.get("JDF_CIBLE") == "infomaniak":
         # hébergement Apache : page 404 maison, HTTPS forcé, cache raisonnable
@@ -593,7 +595,7 @@ def main() -> None:
         for c in list(reversed(retenues))[:3])
     bloc_livre = f"""<section class="livre" id="livre">
   <div class="livre-int">
-    <a class="couv" href="{html.escape(livre['lien'])}" rel="noopener"><img src="/{livre['image']}" alt="Couverture de Jours de Francis, I. {html.escape(livre['titre'])}" width="650" height="1122" loading="lazy"></a>
+    <a class="couv" href="{html.escape(livre['lien'])}" rel="noopener"><img src="/{livre['image']}" alt="Couverture de Jours de Francis, I. {html.escape(livre['titre'])}" width="480" height="829" loading="lazy" decoding="async"></a>
     <div class="livre-texte">
       <p class="etiquette">{html.escape(livre.get('etiquette', 'Le livre'))}</p>
       <h2>Jours de Francis<span>I. {html.escape(livre['titre'])}</span></h2>
@@ -610,7 +612,7 @@ def main() -> None:
 </section>""" if video else ""
     corps = f"""<section class="une">
   <div class="une-int">
-    <figure class="embleme"><img src="/{acc.get('image', 'chien-web.jpg')}" alt="Tête de chien, gravure sur bois" width="720" height="776"></figure>
+    <figure class="embleme"><img src="/{acc.get('image', 'chien-web.jpg')}" alt="Tête de chien, gravure sur bois" width="560" height="603" fetchpriority="high"></figure>
     <div class="une-texte">
       <h1>{html.escape(cfg['titre'])}</h1>
       <p class="accroche">{html.escape(cfg['accroche'])}</p>
