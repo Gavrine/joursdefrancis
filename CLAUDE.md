@@ -40,6 +40,5 @@ Fichier de contexte pour reprendre le projet dans une nouvelle conversation sans
 
 - Tester le formulaire d'inscription du site avec une adresse secondaire (vérifier l'audience de destination).
 - Modifier les mails/pages de confirmation dans Mailchimp (menu Formulaires).
-- Alléger les images de l'accueil (chien ~70 Ko, couverture ~60 Ko) : préparé une fois, pas publié.
 - Pistes de croissance : échanges de recommandations avec d'autres infolettres, présence Substack/Kessel, encart dans le livre, plan du site + Search Console, lien « Envoyer ce texte à quelqu'un », génération automatique des visuels Instagram.
 - Résilier le WordPress seulement après quelques jours sans problème.
