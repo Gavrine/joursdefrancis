@@ -3,7 +3,9 @@
   --encre: #221d17;
   --gris: #6f655a;
   --filet: #d9cfbf;
-  --accent: #8b2e1f;
+  --accent: #b5361d;
+  --vermillon: #e14b26;
+  --vermillon-fonce: #c23c1c;
   --encart: #efe7d8;
   --mesure: 36rem;
   color-scheme: light;
@@ -14,7 +16,9 @@
     --encre: #e9e1d3;
     --gris: #a39886;
     --filet: #3a342c;
-    --accent: #e08a6d;
+    --accent: #f08a68;
+    --vermillon: #d9481f;
+    --vermillon-fonce: #b83a17;
     --encart: #24201b;
     color-scheme: dark;
   }
@@ -39,7 +43,7 @@ main { padding: 0 1rem; }
 
 /* bandeau */
 .tete {
-  max-width: var(--mesure);
+  max-width: 62rem;
   margin: 0 auto;
   padding: 1.4rem 1rem 0;
   display: flex;
@@ -52,37 +56,69 @@ main { padding: 0 1rem; }
 .tete nav { display: flex; gap: 1.2rem; }
 .tete nav a { text-decoration: none; color: var(--gris); }
 .tete nav a:hover { color: var(--accent); }
+.tete nav .nav-abo { color: var(--vermillon-fonce); }
 
 /* accueil */
-.une { max-width: var(--mesure); margin: 0 auto; padding: 5rem 0 3rem; text-align: center; }
-.une h1 { font-size: clamp(2.6rem, 9vw, 4rem); font-weight: 400; line-height: 1.05; margin: 0; letter-spacing: -.01em; }
-.sous-titre { font-variant: small-caps; letter-spacing: .08em; color: var(--gris); margin: .8rem 0 0; font-size: 1.05rem; }
-.accroche { font-style: italic; margin: 1.6rem 0 2.2rem; font-size: 1.35rem; }
+.une { padding: 3.5rem 0 3.5rem; }
+.une-int {
+  max-width: 62rem; margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 23rem) minmax(0, 1fr); gap: 3.5rem; align-items: center;
+}
+.embleme { margin: 0; }
+.embleme img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+.une h1 {
+  font-size: clamp(2.8rem, 7vw, 4.6rem); font-weight: 400; font-style: italic; text-transform: uppercase;
+  line-height: .95; letter-spacing: -.01em; margin: 0;
+}
+.accroche { font-style: italic; color: var(--vermillon-fonce); margin: .9rem 0 1.4rem; font-size: 1.35rem; }
+.une-texte > p:not(.accroche):not(.rassurance) { margin: 0 0 .9em; }
+.une .inscription { margin: 1.8rem 0 0; max-width: 30rem; }
+.rassurance { color: var(--gris); font-size: 1rem; line-height: 1.45; margin: .7rem 0 0; max-width: 30rem; }
 
-.inscription { max-width: 28rem; margin: 0 auto; text-align: left; }
 .inscription label { display: block; font-size: .95rem; color: var(--gris); margin-bottom: .4rem; }
-.champ { display: flex; border: 1px solid var(--encre); border-radius: 2px; overflow: hidden; }
+.champ { display: flex; border: 1px solid var(--encre); border-radius: 3px; overflow: hidden; background: var(--papier); }
 .champ input {
-  flex: 1; min-width: 0; border: 0; padding: .7rem .8rem; font: inherit; font-size: 1.05rem;
+  flex: 1; min-width: 0; border: 0; padding: .75rem .85rem; font: inherit; font-size: 1.08rem;
   background: transparent; color: var(--encre);
 }
 .champ input:focus { outline: none; background: var(--encart); }
 .champ button {
-  border: 0; padding: 0 1.1rem; font: inherit; font-size: 1rem; cursor: pointer;
-  background: var(--encre); color: var(--papier);
+  border: 0; padding: 0 1.2rem; font: inherit; font-size: 1.05rem; cursor: pointer; white-space: nowrap;
+  background: var(--vermillon-fonce); color: #fff;
 }
-.champ button:hover { background: var(--accent); }
+.champ button:hover { background: var(--encre); }
 
-.recents, .livre { max-width: var(--mesure); margin: 0 auto; padding: 2.5rem 0; border-top: 1px solid var(--filet); }
-.recents h2, .annee h2 {
-  font-size: 1rem; font-weight: 400; font-variant: small-caps; letter-spacing: .1em; color: var(--gris); margin: 0 0 1rem;
+.recents { max-width: var(--mesure); margin: 0 auto; padding: 2.5rem 0 3.5rem; border-top: 1px solid var(--filet); }
+.recents h2, .etiquette {
+  font-size: 1rem; font-weight: 400; font-variant: small-caps; letter-spacing: .1em; color: var(--gris); margin: 0 0 .8rem;
 }
-.tout { margin: 1.5rem 0 0; font-size: 1.05rem; }
-.livre { text-align: center; padding-bottom: 4rem; }
-.etiquette { font-variant: small-caps; letter-spacing: .1em; color: var(--gris); font-size: 1rem; margin: 0; }
-.livre h2 { font-size: 2rem; font-weight: 400; margin: .3rem 0 .4rem; }
-.livre h2 a { text-decoration: none; }
-.livre p { margin: 0; }
+.tout { margin: 1.2rem 0 0; font-size: 1.05rem; }
+
+/* le livre : bandeau à la couleur de la couverture */
+.livre { background: var(--vermillon); color: #1a0d08; margin: 0 -1rem; padding: 4rem 1rem; }
+.livre-int {
+  max-width: 54rem; margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 3rem; align-items: center;
+}
+.couv img { display: block; width: 100%; height: auto; box-shadow: 0 1.2rem 2.4rem rgba(60, 15, 0, .35), 0 .2rem .5rem rgba(60, 15, 0, .25); transform: rotate(-1.5deg); transition: transform .3s; }
+.couv:hover img { transform: rotate(0); }
+.livre .etiquette { color: rgba(26, 13, 8, .7); }
+.livre h2 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 400; font-style: italic; text-transform: uppercase; line-height: 1; margin: 0 0 1.2rem; }
+.livre h2 span { display: block; font-style: normal; text-transform: none; font-size: 1.3rem; margin-top: .5rem; }
+.livre p { margin: 0 0 .8em; }
+.livre a { color: inherit; }
+.bouton {
+  display: inline-block; margin-top: .6rem; padding: .7rem 1.3rem; border: 1px solid #1a0d08; border-radius: 3px;
+  text-decoration: none; font-size: 1.05rem;
+}
+.bouton:hover { background: #1a0d08; color: var(--vermillon) !important; }
+
+/* vidéo */
+.video { max-width: var(--mesure); margin: 0 auto; padding: 3.5rem 0 1rem; }
+.video h2 { font-size: 2rem; font-weight: 400; margin: 0 0 .6rem; }
+.video p { margin: 0 0 .8em; }
+.lien-fleche { color: var(--vermillon-fonce); text-decoration: none; }
+.lien-fleche:hover { text-decoration: underline; }
 
 /* listes de textes */
 .liste { list-style: none; margin: 0; padding: 0; }
@@ -132,11 +168,22 @@ main { padding: 0 1rem; }
 .pied { max-width: var(--mesure); margin: 0 auto; padding: 2rem 1rem 3rem; color: var(--gris); font-size: .95rem; text-align: center; }
 .pied p { margin: 0; }
 
+@media (max-width: 52rem) {
+  .une-int { grid-template-columns: 1fr; gap: 1.5rem; max-width: var(--mesure); }
+  .embleme { max-width: 15rem; }
+  .livre-int { grid-template-columns: 1fr; max-width: var(--mesure); }
+  .couv { max-width: 13rem; }
+}
 @media (max-width: 34rem) {
+  .tete { flex-direction: column; gap: .4rem; }
+  .tete nav { gap: .9rem; flex-wrap: wrap; }
   body { font-size: 1.15rem; }
   .une { padding-top: 3.5rem; }
   .liste a { grid-template-columns: 1fr; }
   .liste time { grid-row: auto; }
   .suite { grid-template-columns: 1fr; }
   .suite .suiv { text-align: left; }
+}
+@media (prefers-color-scheme: dark) {
+  .embleme img { mix-blend-mode: normal; }
 }

@@ -431,7 +431,9 @@ def page(cfg: dict, titre: str, corps: str, description: str = "", classe: str =
 <meta property="og:title" content="{html.escape(titre)}">
 <meta property="og:description" content="{desc}">
 <link rel="alternate" type="application/rss+xml" title="{html.escape(cfg['titre'])}" href="/flux.xml">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://{cfg['domaine']}/chien-web.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -440,7 +442,7 @@ def page(cfg: dict, titre: str, corps: str, description: str = "", classe: str =
 <body class="{classe}">
 <header class="tete">
   <a class="marque" href="/">{html.escape(cfg['titre'])}</a>
-  <nav><a href="/archives/">Archives</a><a href="/#inscription">S'abonner</a></nav>
+  <nav><a href="/archives/">Archives</a><a href="/#livre">Le livre</a><a href="/#video">Vidéos</a><a class="nav-abo" href="/#inscription">S’abonner</a></nav>
 </header>
 <main>
 {corps}
@@ -456,10 +458,10 @@ def page(cfg: dict, titre: str, corps: str, description: str = "", classe: str =
 def formulaire(cfg: dict, ident: str = "inscription") -> str:
     ins = cfg["inscription"]
     return f"""<form class="inscription" id="{ident}" action="{html.escape(ins['action'])}" method="post" target="_blank">
-  <label for="email-{ident}">Recevoir l'infolettre</label>
+  <label for="email-{ident}">Votre adresse électronique</label>
   <div class="champ">
-    <input type="email" name="EMAIL" id="email-{ident}" placeholder="votre adresse électronique" required autocomplete="email">
-    <button type="submit">S'abonner</button>
+    <input type="email" name="EMAIL" id="email-{ident}" placeholder="nom@exemple.fr" required autocomplete="email">
+    <button type="submit">Je m’abonne</button>
   </div>
   <div aria-hidden="true" style="position:absolute;left:-5000px"><input type="text" name="{ins['pot_de_miel']}" tabindex="-1" value=""></div>
 </form>"""
@@ -564,32 +566,53 @@ def main() -> None:
     (OUT / "archives" / "index.html").write_text(page(cfg, "Archives", corps, classe="page-archives"), encoding="utf-8")
 
     # accueil
+    acc = cfg.get("accueil", {})
     livre = cfg.get("livre")
+    video = cfg.get("video")
+    paras = "\n".join(f"    <p>{t}</p>" for t in acc.get("presentation", []))
     dernieres = "\n".join(
-        f"""    <li><a href="/archives/{c['slug']}/"><time datetime="{c['send_time'][:10]}">{c['date_fr']}</time>
-      <span class="t">{html.escape(c['titre_aff'])}</span>
-      <span class="c">{c['chapeau']}</span></a></li>"""
-        for c in list(reversed(retenues))[:5])
-    bloc_livre = f"""<section class="livre">
-  <p class="etiquette">En librairie</p>
-  <h2><a href="{html.escape(livre['lien'])}" rel="noopener"><em>{html.escape(livre['titre'])}</em></a></h2>
-  <p>{html.escape(livre['texte'])}</p>
+        f"""      <li><a href="/archives/{c['slug']}/"><span class="t">{html.escape(c['titre_aff'])}</span>
+        <span class="c">{c['chapeau']}</span></a></li>"""
+        for c in list(reversed(retenues))[:3])
+    bloc_livre = f"""<section class="livre" id="livre">
+  <div class="livre-int">
+    <a class="couv" href="{html.escape(livre['lien'])}" rel="noopener"><img src="/{livre['image']}" alt="Couverture de Jours de Francis, I. {html.escape(livre['titre'])}" width="650" height="1122" loading="lazy"></a>
+    <div class="livre-texte">
+      <p class="etiquette">{html.escape(livre.get('etiquette', 'Le livre'))}</p>
+      <h2>Jours de Francis<span>I. {html.escape(livre['titre'])}</span></h2>
+{"".join(f"      <p>{t}</p>" for t in livre.get('presentation', []))}
+      <p><a class="bouton" href="{html.escape(livre['lien'])}" rel="noopener">{html.escape(livre.get('bouton', 'Commander'))}</a></p>
+    </div>
+  </div>
 </section>""" if livre else ""
+    bloc_video = f"""<section class="video" id="video">
+  <p class="etiquette">{html.escape(video.get('etiquette', 'En vidéo'))}</p>
+  <h2>{html.escape(video['titre'])}</h2>
+{"".join(f"  <p>{t}</p>" for t in video.get('presentation', []))}
+  <p><a class="lien-fleche" href="{html.escape(video['lien'])}" rel="noopener">{html.escape(video.get('bouton', 'Voir la chaîne'))} →</a></p>
+</section>""" if video else ""
     corps = f"""<section class="une">
-  <h1>{html.escape(cfg['titre'])}</h1>
-  <p class="sous-titre">{html.escape(cfg['sous_titre'])}</p>
-  <p class="accroche">{html.escape(cfg['accroche'])}</p>
-  {formulaire(cfg)}
+  <div class="une-int">
+    <figure class="embleme"><img src="/{acc.get('image', 'chien-web.jpg')}" alt="Tête de chien, gravure sur bois" width="720" height="776"></figure>
+    <div class="une-texte">
+      <h1>{html.escape(cfg['titre'])}</h1>
+      <p class="accroche">{html.escape(cfg['accroche'])}</p>
+{paras}
+      {formulaire(cfg)}
+      <p class="rassurance">{acc.get('rassurance', '')}</p>
+    </div>
+  </div>
 </section>
 <section class="recents">
   <h2>Derniers envois</h2>
-  <ul class="liste">
+  <ul class="liste sans-date">
 {dernieres}
   </ul>
   <p class="tout"><a href="/archives/">Toutes les infolettres →</a></p>
 </section>
-{bloc_livre}"""
-    (OUT / "index.html").write_text(page(cfg, cfg["titre"], corps, classe="page-accueil"), encoding="utf-8")
+{bloc_livre}
+{bloc_video}"""
+    (OUT / "index.html").write_text(page(cfg, cfg["titre"], corps, acc.get("description", ""), classe="page-accueil"), encoding="utf-8")
 
     # 404
     (OUT / "404.html").write_text(page(cfg, "Page introuvable", """<header class="intro"><h1>Page introuvable</h1>
@@ -606,7 +629,7 @@ def main() -> None:
 <description>{html.escape(contenu)}</description></item>""")
     (OUT / "flux.xml").write_text(f"""<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel><title>{html.escape(cfg['titre'])}</title><link>{base}/</link>
-<description>{html.escape(cfg['sous_titre'])}</description><language>fr</language>
+<description>{html.escape(cfg['accroche'])}</description><language>fr</language>
 {''.join(items)}
 </channel></rss>
 """, encoding="utf-8")

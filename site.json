@@ -1,7 +1,6 @@
 {
   "titre": "Jours de Francis",
-  "sous_titre": "Infolettre personnelle et littéraire",
-  "accroche": "Le journal intime au million d'abonnés",
+  "accroche": "Le journal intime au million d’abonnés",
   "domaine": "joursdefrancis.fr",
   "base": "/joursdefrancis",
   "liste_archivee": "Jours de Francis",
@@ -10,10 +9,34 @@
     "action": "https://us3.list-manage.com/subscribe/post?u=12a4a728a83909352495f220d&id=828c6db1a7",
     "pot_de_miel": "b_12a4a728a83909352495f220d_828c6db1a7"
   },
+  "accueil": {
+    "description": "Jours de Francis, le journal intime au million d’abonnés : une infolettre littéraire, drôle et mélancolique, à recevoir gratuitement.",
+    "image": "chien-web.jpg",
+    "presentation": [
+      "Depuis 2016, Francis tient son journal et l’envoie par courriel à qui veut bien le lire. On y croise un voisin nommé Jean-Marie, une chatonne <em>mackerel tabby white</em>, une Vespa qui rend l’âme devant la gare, Barbara, Chopin, un père qui ne revient pas, et toutes sortes de petites catastrophes que la vie inflige à un homme d’âge mûr installé sur les hauteurs de Cadillac.",
+      "C’est souvent drôle, parfois triste, presque toujours vrai."
+    ],
+    "rassurance": "Gratuit, sans publicité. Une lettre quand il y a quelque chose à raconter, ce qui arrive plus souvent que Francis ne le voudrait."
+  },
   "livre": {
     "titre": "Passer janvier",
-    "texte": "Le premier volume de Jours de Francis, aux éditions du Nénufar.",
-    "lien": "https://lenenufar.fr/produit/passer-janvier/"
+    "lien": "https://lenenufar.fr/produit/passer-janvier/",
+    "etiquette": "En librairie",
+    "image": "couverture-hd.jpg",
+    "presentation": [
+      "Les premiers temps du Journal, revus, corrigés et augmentés d’inédits, réunis en un volume aux éditions du Nénufar.",
+      "L’édition originale numérotée est épuisée ; un second tirage attend les retardataires."
+    ],
+    "bouton": "Commander le livre"
+  },
+  "video": {
+    "etiquette": "En vidéo",
+    "titre": "Infra-ordinaire",
+    "presentation": [
+      "La chaîne YouTube de Francis. <em>Texte à compléter.</em>"
+    ],
+    "lien": "https://www.youtube.com/results?search_query=Infra-ordinaire",
+    "bouton": "Voir la chaîne"
   },
   "images": {
     "chien.jpeg": "https://joursdefrancis.fr/wp-content/uploads/2024/02/dog_jdf.jpeg",
