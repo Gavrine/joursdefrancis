@@ -599,7 +599,7 @@ def main() -> None:
       <p class="accroche">{html.escape(cfg['accroche'])}</p>
 {paras}
       {formulaire(cfg)}
-      <p class="rassurance">{acc.get('rassurance', '')}</p>
+      {f'<p class="rassurance">{acc["rassurance"]}</p>' if acc.get("rassurance") else ""}
     </div>
   </div>
 </section>
