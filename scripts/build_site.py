@@ -58,6 +58,9 @@ PIED_DUR = re.compile(
     r"un clic sur l.un de ces boutons",
     re.I,
 )
+# Formule d'adresse « Cher abonné, Chère abonnée » : propre à l'envoi par mail.
+SALUT_LIGNE = re.compile(
+    r"^\s*((ch[eè]re?s?|ch[eè]r\(e\))\s+abonn[ée]+(e|\(e\))?s?\s*[,;!.]?\s*)+$", re.I)
 SALUTATION = re.compile(r"^\s*(ch[eè]re?s?|cher\(e\)|ch[eè]r\(e\))\b", re.I)
 
 INLINE = {"em", "i", "strong", "b", "a", "sup", "sub", "u", "s", "small", "span", "font", "code"}
@@ -317,12 +320,43 @@ def extraire(html_brut: str, sujet: str, nettoyeur: Nettoyeur, images_communes: 
         morceaux.pop(0)
     while morceaux and morceaux[-1] == "<hr>":
         morceaux.pop()
+    # retire la formule d'adresse en tête du texte (« Chère abonnée, » puis « Cher abonné, »
+    # peuvent occuper deux paragraphes : on recommence tant qu'on en trouve)
+    for _ in range(3):
+        avant = list(morceaux)
+        morceaux = [m for m in morceaux if m]
+        morceaux = retirer_salutation(morceaux)
+        if morceaux == avant:
+            break
+    morceaux = [m for m in morceaux if m]
     propre = []
     for m in morceaux:
         if m == "<hr>" and propre and propre[-1] == "<hr>":
             continue
         propre.append(m)
     return "\n".join(propre)
+
+
+def retirer_salutation(morceaux: list[str]) -> list[str]:
+    morceaux = list(morceaux)
+    for i, m in enumerate(morceaux[:3]):
+        para = re.match(r"\s*<p>(.*?)</p>", m, re.S)
+        if not para:
+            if m.strip() and m != "<hr>":
+                break
+            continue
+        lignes = para.group(1).split("<br>")
+        n = len(lignes)
+        while lignes and SALUT_LIGNE.match(html.unescape(re.sub(r"<[^>]+>", "", lignes[0]))):
+            lignes.pop(0)
+        if len(lignes) == n:
+            break  # le texte ne commence pas par une formule d'adresse : on n'y touche pas
+        reste = "<br>".join(lignes).strip()
+        reste = re.sub(r"^(\s|<br>)+", "", reste)
+        nouveau = f"<p>{reste}</p>" if re.sub(r"<[^>]+>|&nbsp;|\s", "", reste) else ""
+        morceaux[i] = (nouveau + m[para.end():]).strip()
+        break
+    return morceaux
 
 
 def chapeau(contenu: str, longueur: int = 170) -> str:
