@@ -95,6 +95,8 @@ def titre_affiche(sujet: str) -> str:
     """« Jours de Francis 21 : 12 novembre — 2 décembre 2018 » devient « 12 novembre — 2 décembre 2018 »."""
     t = re.sub(r"^\s*Jours de Francis\s*\d*\s*[^\w\s:]*\s*:\s*", "", sujet).strip()
     t = t or sujet.strip()
+    t = "".join(c for c in t if unicodedata.category(c) != "So" and c not in "\u200d\ufe0f")
+    t = re.sub(r"[\s\xa0]+", " ", t).strip()
     return t[0].upper() + t[1:] if t[0].islower() else t
 
 
