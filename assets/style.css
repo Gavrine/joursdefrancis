@@ -170,9 +170,9 @@ main { padding: 0 1rem; }
 
 @media (max-width: 52rem) {
   .une-int { grid-template-columns: 1fr; gap: 1.5rem; max-width: var(--mesure); }
-  .embleme { max-width: 15rem; }
+  .embleme { max-width: 15rem; margin: 0 auto; }
   .livre-int { grid-template-columns: 1fr; max-width: var(--mesure); }
-  .couv { max-width: 13rem; }
+  .couv { display: block; max-width: 13rem; margin: 0 auto; }
 }
 @media (max-width: 34rem) {
   .tete { flex-direction: column; gap: .4rem; }
