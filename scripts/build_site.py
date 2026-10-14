@@ -523,6 +523,9 @@ def main() -> None:
     for f in ASSETS.iterdir():
         shutil.copy(f, OUT / f.name)
     prefixe = cfg.get("base", "").rstrip("/")
+    if not prefixe and cfg.get("domaine"):
+        # domaine personnel : GitHub Pages le lit dans ce fichier
+        (OUT / "CNAME").write_text(cfg["domaine"] + "\n")
 
     # pages des textes
     for i, c in enumerate(retenues):
