@@ -21,6 +21,12 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "raw"
 
 
+def fail(msg: str) -> None:
+    # Préfixe ::error:: pour que le message apparaisse dans les annotations GitHub.
+    print(f"::error::{msg}")
+    sys.exit(1)
+
+
 def api(key: str, path: str) -> dict:
     dc = key.rsplit("-", 1)[-1]
     url = f"https://{dc}.api.mailchimp.com/3.0{path}"
@@ -30,7 +36,9 @@ def api(key: str, path: str) -> dict:
         with urllib.request.urlopen(req, timeout=60) as r:
             return json.load(r)
     except urllib.error.HTTPError as e:
-        sys.exit(f"Erreur API Mailchimp {e.code} sur {path} : {e.read().decode()[:500]}")
+        fail(f"Erreur API Mailchimp {e.code} sur {path.split('?')[0]} : {e.read().decode()[:300]}")
+    except urllib.error.URLError as e:
+        fail(f"Impossible de joindre Mailchimp ({dc}) : {e.reason}")
 
 
 def list_sent(key: str) -> list[dict]:
@@ -55,7 +63,7 @@ def list_sent(key: str) -> list[dict]:
 def main() -> None:
     key = os.environ.get("MAILCHIMP_API_KEY", "").strip()
     if not key or "-" not in key:
-        sys.exit("MAILCHIMP_API_KEY absente ou mal formée (attendu : xxxxxxxx-us3).")
+        fail("Le secret MAILCHIMP_API_KEY est absent ou mal formé (attendu : une clé qui se termine par -us3).")
 
     RAW.mkdir(exist_ok=True)
     campaigns = list_sent(key)
