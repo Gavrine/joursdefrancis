@@ -17,6 +17,10 @@ concurrency:
 jobs:
   publier:
     runs-on: ubuntu-latest
+    env:
+      INFOMANIAK_HOST: ${{ secrets.INFOMANIAK_HOST }}
+      INFOMANIAK_USER: ${{ secrets.INFOMANIAK_USER }}
+      INFOMANIAK_PASSWORD: ${{ secrets.INFOMANIAK_PASSWORD }}
     steps:
       - uses: actions/checkout@v5
 
@@ -62,3 +66,21 @@ jobs:
           git add -A
           git commit -q -m "Publication du site"
           git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+
+      - name: Construire la version joursdefrancis.fr
+        if: env.INFOMANIAK_HOST != ''
+        env:
+          JDF_BASE: ""
+          JDF_SORTIE: _site_infomaniak
+          JDF_CIBLE: infomaniak
+        run: python scripts/build_site.py
+
+      - name: Envoyer sur l'hébergement Infomaniak
+        if: env.INFOMANIAK_HOST != ''
+        run: |
+          sudo apt-get install -y -qq lftp > /dev/null
+          lftp -u "$INFOMANIAK_USER","$INFOMANIAK_PASSWORD" "sftp://$INFOMANIAK_HOST" -e "
+            set sftp:auto-confirm yes;
+            set net:max-retries 3;
+            mirror --reverse --delete --verbose=1 _site_infomaniak .;
+            bye"

@@ -11,6 +11,7 @@ balises de fusion (*|...|*) et styles en ligne disparaissent.
 """
 
 import difflib
+import os
 import html
 import json
 import re
@@ -23,7 +24,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag, Comment
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "raw"
-OUT = ROOT / "_site"
+OUT = ROOT / os.environ.get("JDF_SORTIE", "_site")
 ASSETS = ROOT / "assets"
 
 MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
@@ -522,9 +523,22 @@ def main() -> None:
     OUT.mkdir()
     for f in ASSETS.iterdir():
         shutil.copy(f, OUT / f.name)
-    prefixe = cfg.get("base", "").rstrip("/")
-    if not prefixe and cfg.get("domaine"):
-        # domaine personnel : GitHub Pages le lit dans ce fichier
+    prefixe = os.environ.get("JDF_BASE", cfg.get("base", "")).rstrip("/")
+    if os.environ.get("JDF_CIBLE") == "infomaniak":
+        # hébergement Apache : page 404 maison, HTTPS forcé, cache raisonnable
+        (OUT / ".htaccess").write_text(
+            "ErrorDocument 404 /404.html\n"
+            "RewriteEngine On\n"
+            "RewriteCond %{HTTPS} off\n"
+            "RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]\n"
+            "<IfModule mod_expires.c>\n"
+            "  ExpiresActive On\n"
+            "  ExpiresByType text/css \"access plus 1 week\"\n"
+            "  ExpiresByType image/jpeg \"access plus 1 month\"\n"
+            "  ExpiresByType image/png \"access plus 1 month\"\n"
+            "</IfModule>\n")
+    elif not prefixe and cfg.get("domaine"):
+        # domaine personnel sur GitHub Pages : déclaré dans ce fichier
         (OUT / "CNAME").write_text(cfg["domaine"] + "\n")
 
     # pages des textes
