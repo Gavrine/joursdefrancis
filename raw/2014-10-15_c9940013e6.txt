@@ -1,0 +1,19 @@
+Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
+------------------------------------------------------------
+http://www.frog.lu
+
+15 oct 14 — Un jeune garçon, âgé de l’âge de se rêver l'héritier d'une noble lignée, contemple au travers d'un carreau sale le jardin sous la lune. Dans la journée, armé d'un baton, car craignant les serpents, il a foulé les hautes herbes du jardin, si hautes qu’elles le dépassaient d’une à deux têtes, le protégeant du soleil, heureusement, puisqu’il était parti sans la casquette blanche que sa mère dépose ces temps-ci sur sa tête en marmonnant : canicule. Il s’est rendu au pied de chacun des arbres dont il entrevoyait la cime au milieu de cette végétation, a enlacé chacun de leurs troncs et leur a murmuré quelques mots. Pommier, noyer, sapin, chacun a son langage, il les comprend tous et espère que les arbres l'entendront. Il a crié sa joie sur un tas de tuiles abandonnées tandis que son père, au loin, gesticulait, songeant au meilleur moyen de remettre la bâtisse d’aplomb. Il a couru vers la rivière et le chemin qu’il a tracé dans les hautes herbes s'est
+refermé derrière lui sur les papillons furieux d'avoir été dérangés. Là-bas, l’eau grouillait de petits poissons, des goujons dont il ne connaissait pas encore le nom, et qu’il apprendra à distinguer des épinoches qui sont également légion. Il ne sera jamais bon pêcheur puisque, toujours, transpercer le ver de terre, puis la bouche du poisson, lui répugnera. Et puis, fatigué comme un chiot, il est rentré dîner dans la maison fraîche aux pièces provisoires. La chambre qu’on lui a attribuée est faite de plâtre, comme les toilettes où il a vu une énorme mouche donner naissance à de grosses larves. On a mis à sa disposition un pot de chambre et une bouteille d’eau pour la nuit. S’il buvait à pleines gorgées au dessus du pot de chambre, se transformerait-il en alambic immédiat ? L'expérience échoue, et le voici donc un peu déçu, très las, derrière le carreau sale. Les adultes, dont le dîner s’éternise, laissent échapper des rires. Son père se met à chanter horribl
+ement puis, heureusement, la voix de sa mère s'élève à son tour, et on l'écoute en silence avant d'applaudir. C’est le soir, le premier soir. Le vent chaud agite la tête des hautes herbes, ou peut-être tremblent-elles d'être bientôt fauchées. Alors, le jeune garçon ouvre alors la fenêtre et sort. Les vers luisants donnent une fête, mais c'est à la lueur de la lune, et des étoiles, qu'il fait quelques pas pour coller son visage à la vitre tiède du salon. Il entend la voix étouffée de sa mère qui dit : si on m’avait dit que je vivrais un jour à Pétaouchnoque, et le jeune garçon est heureux d'apprendre enfin le nom, oriental et mystérieux, de son nouveau royaume.
+
+============================================================
+** désabonnement (https://us3.admin.mailchimp.com/templates/*|UNSUB|*)
+** cinéma (http://francistuff.tumblr.com)
+** photos (http://kissmyfrog.tumblr.com)
+** contact (mailto:fran6frog@gmail.com)
+
+This email was sent to *|EMAIL|* (mailto:*|EMAIL|*)
+why did I get this? (*|ABOUT_LIST|*)     unsubscribe from this list (*|UNSUB|*)     update subscription preferences (*|UPDATE_PROFILE|*)
+*|LIST_ADDRESSLINE_TEXT|*
+
+*|REWARDS_TEXT|*

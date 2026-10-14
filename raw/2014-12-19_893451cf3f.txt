@@ -1,0 +1,18 @@
+Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
+------------------------------------------------------------
+http://www.frog.lu
+19 déc 14 — Je suis ces temps-ci la proie d’une frénésie de lecture de récits de voyage, un genre qui m’a du reste longtemps ennuyé jusqu’à ce que je découvre, il y a quelques années, l’oeuvre de Nicolas Bouvier. De fil en aiguille, de livre en livre, me voici donc lisant le superbe Chemin faisant, dans lequel Jacques Lacarrière, dont j’ignorais tout, raconte son périple à pied dans la France du début des années soixante-dix. Il y est question de forêts, de vipères endormies, de villages dépeuplés déjà, et de bien d’autres choses d’importance mais désormais disparues. Ne distinguant point mon inculture de la réalité des choses je pensais l’auteur méconnu, aussi fus-je tout à la fois étonné de trouver un de ses livres à l’étal d’un bouquiniste pour le prix dérisoire d’un euro, et conforté dans mon sentiment erroné par la modicité presque insultante de ce prix. J’ai du reste appris depuis lors que l’auteur avait non seulement écrit de nombreux livres
+faisant référence, mais qu’il existait une association des amis de Jacques Lacarrière très active. Je sors donc une pièce de ma poche et me dirige vers le bouquiniste dont les livres, à cette notable exception, sont du plus mauvais goût. L’homme, ignorant de son trésor, mange un poisson cru, peut-être un maquereau. Il en repose une partie qu'il s'apprêtait à porter à sa bouche et, à ma grande surprise, se met à me parler de l’oeuvre de Jacques Lacarrière que, contre toute attente, il connait fort bien. Je suis fort incommodé par son haleine, mais cela ne nous empêche pas de tomber d’accord sur plusieurs points de littérature. Un peu plus loin, devant un autre étal, je me saisis d’un livre de Jouhandeau sous le regard intense d’un jeune homme en survêtement rouge qui, vraiment, n’a pas l’air d’un amateur de lecture, ou alors peut-être, à la limite, d’ouvrages en rapport avec la préparation du diplôme d’éducateur physique : anatomie musculaire, biomécanique, psy
+chologie ou que sais-je encore. Plutôt bien fait de ma personne, non dénué de charme, je suis habitué à ce qu’on me regarde mais là, je l’avoue volontiers, je commence à me demander ce qu’il me veut lorsqu’il qu’il me dit : vous avez choisi un livre de Jouhandeau, connaissez-vous Chaminadour ? ce à quoi je réponds d’un air entendu mais sans aller jusqu’au clin d’oeil : oui, enfin Guéret, vous voulez dire. Il sourit à cet habile trait d’esprit. De là, une intéressante discussion sur l’oeuvre de Jouhandeau ainsi que sur sa femme. Sur le chemin du retour, chargé d’une ridicule chaise recouverte de moumoute bleue, mes deux précieux livres en poche, je songe que, décidément, je ne suis guère épargné par les préjugés mais que ma joie en est double lorsque, d’aventure, ils s’avèrent infondés.
+
+============================================================
+** désabonnement (https://us3.admin.mailchimp.com/templates/*|UNSUB|*)
+** cinéma (http://francistuff.tumblr.com)
+** photos (http://kissmyfrog.tumblr.com)
+** contact (mailto:fran6frog@gmail.com)
+
+This email was sent to *|EMAIL|* (mailto:*|EMAIL|*)
+why did I get this? (*|ABOUT_LIST|*)     unsubscribe from this list (*|UNSUB|*)     update subscription preferences (*|UPDATE_PROFILE|*)
+*|LIST_ADDRESSLINE_TEXT|*
+
+*|REWARDS_TEXT|*

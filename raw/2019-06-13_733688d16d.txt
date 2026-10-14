@@ -1,0 +1,27 @@
+*|MC_PREVIEW_TEXT|*
+
+Chèr(e) abonné(e),
+Il semblerait que vous n'ayiez ouvert aucun Jours de Francis depuis très, très longtemps.
+
+Peut-être est-ce mon prestataire technique qui se trompe, ce gros malin ?
+
+Je souhaitais en tout état de cause m'assurer que vous vouliez bien continuer à recevoir de mes nouvelles.
+
+Si tel est le cas, envoyez-moi un petit mot... dans le cas contraire, je supprimerai votre adresse d'ici quelques jours.
+
+À bientôt, j'espère !
+Francis.
+
+============================================================
+Copyright © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.
+*|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*
+
+Our mailing address is:
+*|LIST_ADDRESS|* *|END:IF|*
+
+Want to change how you receive these emails?
+You can ** update your preferences (*|UPDATE_PROFILE|*)
+or ** unsubscribe from this list (*|UNSUB|*)
+.
+
+*|IF:REWARDS|* *|REWARDS_TEXT|* *|END:IF|*

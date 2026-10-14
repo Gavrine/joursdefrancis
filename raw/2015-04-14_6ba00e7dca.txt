@@ -1,0 +1,18 @@
+Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.kklll
+------------------------------------------------------------
+http://www.frog.lu
+J’ai aujourd’hui disposé, dans un triste quartier à la frontière de deux villes, de quelques minutes à tuer. J’ai décidé de le faire tel un bourreau éhonté : au vu et au sus de tous, dans un jardin public. Et me voici à l’ombre d’un arbre, jolie fleur reposant parmi les fleurs, la tête posée sur mon casque, nouant des brins d’herbe et songeant à des choses d’importance. Ce jardin m’en rappelle un autre, botanique, situé dans la ville de Kandy. Des jeunes gens y profitaient des frondaisons, nombreuses et centenaires, pour s’embrasser à l’écart. Il leur fallait faire vite, car un employé muni d’un sifflet était chargé de les déloger. J’aurais de toute évidence surpassé ce pauvre homme. Partout, je voyais des couples qui avaient échappé à sa vigilance et il me fut bien difficile de résister à l’envie de l’alerter. Pris de pitié, comme cela m’arrive souvent, je n’osai l’humilier bien que sa nonchalance me parût inexcusable. Dans ce jardin du bout du m
+onde, où j’aurais aimé devenir chasseur de convenances, il y avait également des chauves-souris géantes, des singes qui ressemblaient à des enfants, et j’avais remarqué sur mes cuisses d’inquiétants boutons. Je continue de songer, les yeux clos. J’entends un vélo qui passe. Je me souviens qu’enfant je coinçais une carte à jouer dans les rayons de ma roue de vélo afin de produire un bruit qui aurait ressemblé à celui d’un moteur. Fallait-il donc que je sois naïf, ou rêveur, ou ignorant de la mécanique. Et qui aurait besoin de pédaler pour faire avancer sa moto. J’ouvre les yeux et je vois qu’une fourmi particulièrement séduisante m’est montée sur le ventre. J’accueille une une brise bienvenue. Je compte au sol les tâches de soleil filtrées par les feuilles de l’arbre. Ce matin, les carreaux humides de la douche reflétaient l’ampoule du plafond. C’est l’infini, ai-je pensé. Puis, à l’instant : mon vieux, ces derniers temps, tu avais un peu oublié l’infi
+ni.
+
+============================================================
+** désabonnement (https://us3.admin.mailchimp.com/templates/*|UNSUB|*)
+** cinéma (http://francistuff.tumblr.com)
+** photos (http://kissmyfrog.tumblr.com)
+** contact (mailto:fran6frog@gmail.com)
+
+This email was sent to *|EMAIL|* (mailto:*|EMAIL|*)
+why did I get this? (*|ABOUT_LIST|*)     unsubscribe from this list (*|UNSUB|*)     update subscription preferences (*|UPDATE_PROFILE|*)
+*|LIST_ADDRESSLINE_TEXT|*
+
+*|REWARDS_TEXT|*

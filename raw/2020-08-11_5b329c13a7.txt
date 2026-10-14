@@ -1,0 +1,33 @@
+*|MC_PREVIEW_TEXT|*
+
+Stop ou encore ?
+Cher(e) abonné(e),
+
+Il semblerait que vous n'ayiez ouvert aucun des dix derniers envois de l'infolettre.
+
+C'est du moins ce que m'affirme mon prestataire d'envoi, mais il se trompe peut-être.
+
+Je souhaitais donc simplement savoir si vous souhaitiez toujours recevoir Jours de Francis.
+
+• Si OUI, répondez simplement à ce mail (un mot suffira).
+
+• Si NON, vous n'avez rien à faire : vous serez désabonné dans quelques temps.
+(vous pouvez aussi vous désabonner vous-même en cliquant au bas de ce courriel).
+
+Francis.
+
+============================================================
+merci pour vos messages, merci de faire connaître l'infolettre.
+ajoutez ** francis@joursdefrancis.fr (mailto:francis@joursdefrancis.fr)
+à vos contacts pour être certain(e) de la recevoir.
+aidez-moi à rester digne :  ** transférer à un ami (*|FORWARD|*)
+.
+
+"cliquez" pour vous ** désabonner (*|UNSUB|*)
+.
+
+This email was sent to *|EMAIL|* (mailto:*|EMAIL|*)
+why did I get this? (*|ABOUT_LIST|*)     unsubscribe from this list (*|UNSUB|*)     update subscription preferences (*|UPDATE_PROFILE|*)
+*|LIST_ADDRESSLINE_TEXT|*
+
+*|REWARDS_TEXT|*

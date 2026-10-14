@@ -1,0 +1,18 @@
+Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
+------------------------------------------------------------
+http://www.frog.lu
+17 sept 14 — Souvent, je me dis : ceci, je m'en souviendrai à coup sur, puis j'oublie. Je souffre à l'idée de ces moments qui se sont perdus pour avoir été trop petits. J'aurais du les écrire, les faire exister. Peut-être faut-il y voir l'origine de mon obsession des journaux, des plus illustres aux plus insignifiants dont l'époque est féconde. Aucun n'est dépourvu d'intérêt à mes yeux avides. Un jour, le grand-père de Barbara est mort juste après avoir entrepris de raconter ses souvenirs dans des cahiers. La charge de les déchiffrer et de les dactylographier m'a échu et j'en ai été heureux. J'ai aimé remettre en forme ces souvenirs d'un autre que j'avais si peu connu, un autre auquel m'unissait désormais un lien de confiance. Je me plais à penser qu'il aurait été heureux que cela soit moi qui m'en charge même si, à n'en pas douter, il aurait choisi Barbara. J'ai donc à l'excès, le souci du souvenir, y compris du souvenir en cours de fabrication. Que je sois avec Crofford ou
+Missoquet à faire ceci ou cela, je me demande ce qui leur demeurera comme souvenir. Bon ou mauvais, selon les circonstances. Afin d'augmenter les chances que le présent ne s'évapore pas dans leurs petites têtes, je souligne le moment, je le fortifie en enfonçant dans leur esprit quelques cales destinées à soutenir l'édifice mémoriel. Puis j'y reviens régulièrement. Je suis un chercheur ès onirisme travaillant patiemment in vivo et in vitro mais dont, je le crains, les travaux n'intéresseront pas grand monde. C'est que depuis toujours, voyez-vous, je me souviens. C'est banal de le dire, c'est un cliché, mais ces voyages en moi-même me comblent et m'ont toujours ôté le goût des voyages physiques et de l'inconnu. Je voyage, pourtant, mais les souvenirs que je ramène de ces voyages n'ont pas la même saveur que ceux dont je parle ici. Ce sont des souvenirs d'adulte, d'un temps où je peux me mouvoir facilement d'un bout à l'autre de la planète, ce sont des souvenirs géographiques.
+Par exemple, je peux me souvenir de ce chien dans le fort de Galle qui m'avait suivi le long du front de mer, ou de cet homme en uniforme sur un pont près de l'Arsenal à Venise, de la neige de Noël tombant à Budapest ou d'un nid d'oiseau en plein Palerme ; ce sont autant de bons souvenirs mais je ne peux les chérir à l'égal de ceux, disons, de mes six ans, lorsque je ne voyageais jamais qu'en moi-même et que le fait d'être ailleurs, en voyage, ne pouvait mordre sur la pureté du ressenti. J'ignore si ces souvenirs, doucement polis depuis si longtemps, peuvent être remplacés, puisque si tel était le cas, ils ne seraient plus.
+
+============================================================
+** désabonnement (https://us3.admin.mailchimp.com/templates/*|UNSUB|*)
+** cinéma (http://francistuff.tumblr.com)
+** photos (http://kissmyfrog.tumblr.com)
+** contact (mailto:fran6frog@gmail.com)
+
+This email was sent to *|EMAIL|* (mailto:*|EMAIL|*)
+why did I get this? (*|ABOUT_LIST|*)     unsubscribe from this list (*|UNSUB|*)     update subscription preferences (*|UPDATE_PROFILE|*)
+*|LIST_ADDRESSLINE_TEXT|*
+
+*|REWARDS_TEXT|*

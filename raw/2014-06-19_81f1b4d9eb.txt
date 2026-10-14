@@ -1,0 +1,17 @@
+Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
+------------------------------------------------------------
+http://www.frog.lu
+19 juin 14 — Cette femme vêtue sobrement que je croise souvent dans les rues de mon quartier : visage mat, lèvres pincées, cheveux blancs ramenés en chignon, petits pas. Et toujours, des larmes coulant des yeux qu’elle essuie d’un mouchoir de papier roulé en boule dans sa main gauche. Je lui imagine plusieurs vies qui, toutes, lui ont apporté son lot de malheur et mettent en scène un fils ou un mari malencontreusement disparus et l’abandonnant à une mer de solitude qu'elle traverse avec une grande dignité. Récemment, je me trouve derrière elle à la caisse d’un supermarché, je me réjouis d'avoir alors tout loisir d’observer ma chic éplorée de plus près. Je comprends vite à je ne sais quel détail qu’en fait d’inconsolable chagrin elle souffre une maladie des yeux, probablement due à cette mauvaise hygiène également cause de son édentation et de cette forte odeur d’urine qui fait le vide autour d’elle. C'est alors que je suis frappé par l'idée que je suis une loupe d
+istordant involontairement la réalité à mesure que j’en grossis les détails. Je regrette d’avoir tiré cette femme de son monde pour la jeter dans celui-ci en l’approchant de trop près. Une fois sorti du magasin, j’emprunte la même rue qu’elle, mais je réduis la cadence de mes pas afin de la laisser regagner la réalité intacte au plus vite.
+
+============================================================
+** désabonnement (https://us3.admin.mailchimp.com/templates/*|UNSUB|*)
+** cinéma (http://francistuff.tumblr.com)
+** photos (http://kissmyfrog.tumblr.com)
+** contact (mailto:fran6frog@gmail.com)
+
+This email was sent to *|EMAIL|*
+why did I get this? (*|ABOUT_LIST|*)     unsubscribe from this list (*|UNSUB|*)     update subscription preferences (*|UPDATE_PROFILE|*)
+*|LIST_ADDRESSLINE_TEXT|*
+
+*|REWARDS_TEXT|*

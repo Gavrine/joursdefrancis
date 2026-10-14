@@ -1,0 +1,18 @@
+Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
+------------------------------------------------------------
+http://www.frog.lu
+17 déc 14 —Je m’endormais difficilement, excité à l’idée que dans quelques heures, au milieu de la nuit, on viendrait me réveiller pour me porter, enveloppé dans une couverture, jusqu’à la banquette arrière de la Simca 1000. Je voulais croire que cette fois, âgé d’une année de plus, j’aurais la force de rester éveillé durant le voyage mais, comme chaque année, je me rendormais immédiatement dans les odeurs de pipe, bercé par le son de la radio grandes ondes. Je ne me réveillais que plus tard, lorsqu’un drôle de bruit sourd se mêlait à mon rêve, le bruit du vent s’engouffrant par les fenêtres qu’on ouvrait enfin, le jour s’étant levé et la chaleur commençant à se faire sentir. Mon réveil sonnait l’heure de la première des courtes haltes - pour ne pas faire chuter la moyenne - que nous nous accordions. J’ai toujours une photographie de moi, assis sur un pot de plastique posé dans l’herbe, le long d’une route, une fleur immense cachant en partie mon visag
+e, prise quelque part sur la route de l’Espagne, le long de laquelle les stations services étaient rares. A peine arrivé je me dégourdissais les jambes parmi les orangers qui me paraissaient immenses, pendant que mes parents installaient nos affaires dans l’appartement qu’on leur avait prêté dans un petit immeuble à la façade délabrée. La première nuit était dépaysante, avec toutes ces voix qui résonnaient dans la ruelle. Lorsque le marchand de glaces faisait tinter la cloche, je me mêlais aux enfants qui convergeaient vers sa carriole, et s’il me restait quelques pesetas j’allais m’offrir un sachet de pipasol au café. Il est possible que l’hygiène des lieux ait laissé à désirer, puisque j’ai souvenir d’être, un jour, remonté jusqu’à l’appartement et d’avoir brandi un rat mort à la face de ma mère. Je m’étais fait un ami prénommé Jesus. Nous rivalisions lors d’épreuves de sprint d’un bout à l’autre de la ruelle, sous l’oeil bienveillant de person
+nes âgées qui nous donnaient le départ. Jesus n’ayant jamais vu la mer, qui était pourtant proche, mes parents l’invitèrent à passer une journée à la plage. Peut-être Jesus se souvient-il lui aussi parfois du jeune et véloce Francis. Il y avait également cette plaisante tradition : après un baptême ou un mariage, on jetait jouets et bonbons depuis le balcon. Les enfants de la ruelle, généralement plus âgés et plus forts que moi, me donnaient une part équitable des friandises et colifichets qu’ils avaient ramassé sur le sol. J’y étais d’autant plus sensible qu’en France, avant notre départ, d'autres enfants m’avaient jeté des pierres jusqu’à me faire saigner du cuir chevelu.
+
+============================================================
+** désabonnement (https://us3.admin.mailchimp.com/templates/*|UNSUB|*)
+** cinéma (http://francistuff.tumblr.com)
+** photos (http://kissmyfrog.tumblr.com)
+** contact (mailto:fran6frog@gmail.com)
+
+This email was sent to *|EMAIL|* (mailto:*|EMAIL|*)
+why did I get this? (*|ABOUT_LIST|*)     unsubscribe from this list (*|UNSUB|*)     update subscription preferences (*|UPDATE_PROFILE|*)
+*|LIST_ADDRESSLINE_TEXT|*
+
+*|REWARDS_TEXT|*

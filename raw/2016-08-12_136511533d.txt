@@ -1,0 +1,26 @@
+Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.kklll
+------------------------------------------------------------
+http://www.frog.lu
+Cher abonné,
+
+L'idée m'est venue d'une infolettre traitant de sujets divers, au gré de mes pérégrinations physiques et imaginaires, de mes centres d'intérêts changeants ou de mes incroyables découvertes sur la vie et le monde.
+
+Son contenu sera donc différent de celle à laquelle vous être déjà abonné, et qui ne fait que reprendre le contenu des textes ici publiés.
+
+Cette nouvelle publication, intitulée Jours de Francis, paraîtra aussitôt que quelques lecteurs auront émis le souhait de la recevoir.
+
+Il suffit, pour ce faire, de cliquer sur le lien suivant et d'entrer son adresse électronique dans le formulaire qui sera alors accessible : http://bit.ly/2aHNNOI
+A bientôt,
+FF.
+
+============================================================
+** désabonnement (https://us3.admin.mailchimp.com/templates/*|UNSUB|*)
+** cinéma (http://francistuff.tumblr.com)
+** photos (http://kissmyfrog.tumblr.com)
+** contact (mailto:fran6frog@gmail.com)
+
+This email was sent to *|EMAIL|* (mailto:*|EMAIL|*)
+why did I get this? (*|ABOUT_LIST|*)     unsubscribe from this list (*|UNSUB|*)     update subscription preferences (*|UPDATE_PROFILE|*)
+*|LIST_ADDRESSLINE_TEXT|*
+
+*|REWARDS_TEXT|*

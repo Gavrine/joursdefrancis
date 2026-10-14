@@ -1,0 +1,17 @@
+Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
+------------------------------------------------------------
+http://www.frog.lu
+18 déc 14 — Dans la presse économique d'hier, cette angoissante nouvelle dissimulée dans le flux quotidien de chutes — rouble, brent, indices — comme si on avait voulu préserver les sensibilités ou, plus vraisemblablement, prévenir une panique au sein la population : les japonais sont confrontés à une pénurie de frites surgelées. D’une voix calme bien que mêlée de stridences révélatrices de mon inquiétude, j’apprends ladite nouvelle à Barbara qui, connaissant ma nature, s’empresse de me rassurer : les supermarchés français disposeraient, à son avis, d’importants stocks de ces frites-allumettes pour lesquelles j’ai un penchant coupable. Je ne peux résister à la facile douceur de la croire, et profite de ce répit dans la folle marche du monde pour souffler un peu. Je songe à une musaraigne affolée, de justesse réchappée des griffes d'un gros chat de ferme grâce à un interstice dans le mur de la cuisine. Un temps, puis Barbara me demande si j’ai eu vent de la
+récente attaque d’une école par des brutes armées au Pakistan. Surpris dans ma rêverie, j’ai cependant la présence d’esprit de ne point m’étonner à voix haute, afin de ne pas l'inquiéter, de sa troublante incapacité à hiérarchiser les informations selon leur véritable importance.
+
+============================================================
+** désabonnement (https://us3.admin.mailchimp.com/templates/*|UNSUB|*)
+** cinéma (http://francistuff.tumblr.com)
+** photos (http://kissmyfrog.tumblr.com)
+** contact (mailto:fran6frog@gmail.com)
+
+This email was sent to *|EMAIL|* (mailto:*|EMAIL|*)
+why did I get this? (*|ABOUT_LIST|*)     unsubscribe from this list (*|UNSUB|*)     update subscription preferences (*|UPDATE_PROFILE|*)
+*|LIST_ADDRESSLINE_TEXT|*
+
+*|REWARDS_TEXT|*
