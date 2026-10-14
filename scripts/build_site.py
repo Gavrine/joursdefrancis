@@ -92,8 +92,10 @@ def date_fr(iso: str) -> str:
 
 
 def titre_affiche(sujet: str) -> str:
-    t = re.sub(r"^\s*Jours de Francis\s*:\s*(?=\D)", "", sujet).strip()
-    return t or sujet.strip()
+    """« Jours de Francis 21 : 12 novembre — 2 décembre 2018 » devient « 12 novembre — 2 décembre 2018 »."""
+    t = re.sub(r"^\s*Jours de Francis\s*\d*\s*[^\w\s:]*\s*:\s*", "", sujet).strip()
+    t = t or sujet.strip()
+    return t[0].upper() + t[1:] if t[0].islower() else t
 
 
 # --------------------------------------------------------------------------- nettoyage
