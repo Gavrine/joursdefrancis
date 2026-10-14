@@ -32,6 +32,7 @@ Fichier de contexte pour reprendre le projet dans une nouvelle conversation sans
 
 ## Décisions prises avec l'auteur
 
+- Un texte archivé commence au texte lui-même : jamais l'adresse au lecteur en ouverture (« Chère abonnée, cher abonné »…). Le nettoyage la retire ; si une variante passe au travers, corriger le nettoyage ou ajouter une retouche.
 - Archives : liste continue des titres avec extrait, sans dates ni années. 74 textes à partir d'avril 2018 ; les trois premiers envois (2016-2017), la liste frog.lu, les annonces et messages de service sont exclus.
 - Accueil : texte de présentation rédigé par l'auteur, à reprendre mot pour mot ; pas de blagues sur Francis ; pas de mention de lieu de résidence.
 - Instagram : un post par envoi (visuel sobre), story avec lien vers la page du texte ; carrousels parodiant les codes du développement personnel avec des phrases tirées des textes, dernière image vermillon renvoyant au site. Ne pas parodier des comptes de femmes.
