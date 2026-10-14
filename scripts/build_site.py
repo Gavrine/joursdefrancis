@@ -376,6 +376,22 @@ def retirer_salutation(contenu: str) -> str:
     return re.sub(r"\n{2,}", "\n", contenu).strip()
 
 
+def retirer_paragraphe(contenu: str, debut: str, titre: str) -> str:
+    """Retire le paragraphe qui commence par `debut` (comparaison sans ponctuation ni casse)."""
+    cle = normalise(debut)[:60]
+    trouve = False
+    def remplace(m):
+        nonlocal trouve
+        if not trouve and normalise(html.unescape(re.sub(r"<[^>]+>", "", m.group(1)))).startswith(cle):
+            trouve = True
+            return ""
+        return m.group(0)
+    contenu = re.sub(r"<p>(.*?)</p>", remplace, contenu, flags=re.S)
+    if not trouve:
+        print(f"::warning::Retouche introuvable dans « {titre} » : {debut[:60]}")
+    return re.sub(r"\n{2,}", "\n", contenu).strip()
+
+
 def chapeau(contenu: str, longueur: int = 170) -> str:
     for p in re.findall(r"<p>(.*?)</p>", contenu, re.S):
         t = html.unescape(re.sub(r"<[^>]+>", " ", p))
@@ -483,9 +499,12 @@ def main() -> None:
     communes = {s for s, n in compte.items() if n >= 3}
 
     nettoyeur = Nettoyeur(liens)
+    retouches = {r["id"]: r for r in cfg.get("retouches", [])}
     for c in retenues:
         brut = (RAW / f"{c['file']}.html").read_text(encoding="utf-8")
         c["contenu"] = extraire(brut, c["subject"], nettoyeur, communes)
+        for debut in retouches.get(c["id"], {}).get("paragraphes_a_retirer", []):
+            c["contenu"] = retirer_paragraphe(c["contenu"], debut, c["titre_aff"])
         c["chapeau"] = chapeau(c["contenu"])
         c["date_fr"] = date_fr(c["send_time"])
 

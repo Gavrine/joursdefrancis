@@ -48,5 +48,14 @@
       "id": "94f6ff973c",
       "note": "2026-06-23 — Nouveau livre"
     }
+  ],
+  "retouches": [
+    {
+      "id": "cd3208c52f",
+      "note": "2026-03-06 — Vieux Man",
+      "paragraphes_a_retirer": [
+        "J'ai cru comprendre que la dernière infolettre, intitulée Tanger"
+      ]
+    }
   ]
 }
