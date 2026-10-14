@@ -1,0 +1,52 @@
+{
+  "titre": "Jours de Francis",
+  "sous_titre": "Infolettre personnelle et littéraire",
+  "accroche": "Le journal intime au million d'abonnés",
+  "domaine": "joursdefrancis.fr",
+  "base": "/joursdefrancis",
+  "liste_archivee": "Jours de Francis",
+  "marqueur_exclusion": "[hors archive]",
+  "inscription": {
+    "action": "https://us3.list-manage.com/subscribe/post?u=12a4a728a83909352495f220d&id=828c6db1a7",
+    "pot_de_miel": "b_12a4a728a83909352495f220d_828c6db1a7"
+  },
+  "livre": {
+    "titre": "Passer janvier",
+    "texte": "Le premier volume de Jours de Francis, aux éditions du Nénufar.",
+    "lien": "https://lenenufar.fr/produit/passer-janvier/"
+  },
+  "exclues": [
+    {
+      "id": "136511533d",
+      "note": "2016-08-12 — Jours de Francis"
+    },
+    {
+      "id": "733688d16d",
+      "note": "2019-06-13 — Souhaitez-vous toujours recevoir Jours de Francis ? 🐸"
+    },
+    {
+      "id": "71349b83e5",
+      "note": "2020-08-10 — Jours de Francis : message de service"
+    },
+    {
+      "id": "5b329c13a7",
+      "note": "2020-08-11 — Voulez-vous toujours recevoir Jours de Francis ?"
+    },
+    {
+      "id": "e2db6fe3e7",
+      "note": "2023-06-21 — Nouveau : C'était mieux jadis"
+    },
+    {
+      "id": "d3052ceeea",
+      "note": "2025-01-09 — Annonce très importante"
+    },
+    {
+      "id": "8687c6819c",
+      "note": "2025-11-30 — Enfin le livre !"
+    },
+    {
+      "id": "94f6ff973c",
+      "note": "2026-06-23 — Nouveau livre"
+    }
+  ]
+}
