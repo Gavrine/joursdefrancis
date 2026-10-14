@@ -79,10 +79,17 @@ jobs:
         if: env.INFOMANIAK_HOST != ''
         run: |
           sudo apt-get install -y -qq lftp > /dev/null
-          lftp -u "$INFOMANIAK_USER","$INFOMANIAK_PASSWORD" "ftp://$INFOMANIAK_HOST" -e "
+          set +e
+          sortie=$(lftp -u "$INFOMANIAK_USER","$INFOMANIAK_PASSWORD" "ftp://$INFOMANIAK_HOST" -e "
             set ftp:ssl-force true;
             set ftp:ssl-protect-data true;
-            set ssl:verify-certificate yes;
-            set net:max-retries 3;
+            set net:max-retries 2;
+            set net:timeout 30;
             mirror --reverse --delete --verbose=1 _site_infomaniak .;
-            bye"
+            bye" 2>&1)
+          code=$?
+          echo "$sortie" | tail -40
+          if [ $code -ne 0 ]; then
+            echo "::error::Envoi Infomaniak impossible : $(echo "$sortie" | grep -v '^Transferring\|^Removing' | tail -4 | tr '\n' ' ')"
+            exit 1
+          fi
