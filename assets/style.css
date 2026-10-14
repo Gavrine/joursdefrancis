@@ -171,6 +171,7 @@ main { padding: 0 1rem; }
 @media (max-width: 52rem) {
   .une-int { grid-template-columns: 1fr; gap: 1.5rem; max-width: var(--mesure); }
   .embleme { max-width: 15rem; margin: 0 auto; }
+  .une h1, .accroche { text-align: center; }
   .livre-int { grid-template-columns: 1fr; max-width: var(--mesure); }
   .couv { display: block; max-width: 13rem; margin: 0 auto; }
 }
