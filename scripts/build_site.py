@@ -407,7 +407,7 @@ def chapeau(contenu: str, longueur: int = 170) -> str:
             continue
         if len(t) > longueur:
             t = t[:longueur].rsplit(" ", 1)[0].rstrip(",;:— ") + "…"
-        t = re.sub(r"\s+([,.;:!?)…])", r"\1", t).replace("( ", "(")
+        t = re.sub(r"\s+([,.)…])", r"\1", t).replace("( ", "(")
         return html.escape(t)
     return ""
 
@@ -545,13 +545,14 @@ def main() -> None:
 
     # archives : tous les titres, du plus récent au plus ancien
     items = "\n".join(
-        f"""    <li><a href="/archives/{c['slug']}/"><span class="t">{html.escape(c['titre_aff'])}</span></a></li>"""
+        f"""    <li><a href="/archives/{c['slug']}/"><span class="t">{html.escape(c['titre_aff'])}</span>
+      <span class="c">{c['chapeau']}</span></a></li>"""
         for c in reversed(retenues))
     corps = f"""<header class="intro">
   <h1>Archives</h1>
 </header>
 <section class="annee">
-  <ul class="liste simple">
+  <ul class="liste sans-date">
 {items}
   </ul>
 </section>"""
