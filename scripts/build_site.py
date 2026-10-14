@@ -10,6 +10,7 @@ Mailchimp ; partage, réseaux sociaux, pieds de page, liens de désinscription,
 balises de fusion (*|...|*) et styles en ligne disparaissent.
 """
 
+import difflib
 import html
 import json
 import re
@@ -45,6 +46,7 @@ PIED = re.compile(
 # Liens de navigation Mailchimp à supprimer avec leur texte.
 NAV = re.compile(
     r"^\s*(lire|voir|consulter)( cette infolettre| ce message)? (dans|sur) (mon|un|votre) navigateur\s*$|"
+    r"^\s*(lire|voir) en ligne\s*$|"
     r"^\s*(consulter|lire|voir) les (lettres|infolettres|numéros) précédent(e)?s\s*$|"
     r"^\s*(envoyer à un ami|gazouiller|partager|tweet|forward)\s*$",
     re.I,
@@ -312,7 +314,10 @@ def extraire(html_brut: str, sujet: str, nettoyeur: Nettoyeur, images_communes: 
                 continue
             if not morceaux or all(m == "<hr>" for m in morceaux):
                 n = normalise(re.sub(r"<[^>]+>", "", rendu))
-                if n and n in (titre_n, titre_n2):
+                if n and len(n) < 80 and any(
+                    n == t or (len(n) >= 4 and (n in t or t in n))
+                    or difflib.SequenceMatcher(None, n, t).ratio() > 0.75
+                    for t in (titre_n, titre_n2) if t):
                     continue
             morceaux.append(rendu)
     # séparateurs superflus en tête, en queue ou doublés
@@ -320,24 +325,16 @@ def extraire(html_brut: str, sujet: str, nettoyeur: Nettoyeur, images_communes: 
         morceaux.pop(0)
     while morceaux and morceaux[-1] == "<hr>":
         morceaux.pop()
-    # retire la formule d'adresse en tête du texte (« Chère abonnée, » puis « Cher abonné, »
-    # peuvent occuper deux paragraphes : on recommence tant qu'on en trouve)
-    for _ in range(3):
-        avant = list(morceaux)
-        morceaux = [m for m in morceaux if m]
-        morceaux = retirer_salutation(morceaux)
-        if morceaux == avant:
-            break
     morceaux = [m for m in morceaux if m]
     propre = []
     for m in morceaux:
         if m == "<hr>" and propre and propre[-1] == "<hr>":
             continue
         propre.append(m)
-    return "\n".join(propre)
+    return retirer_salutation("\n".join(propre))
 
 
-def retirer_salutation(morceaux: list[str]) -> list[str]:
+def retirer_salutation_ancienne(morceaux: list[str]) -> list[str]:
     morceaux = list(morceaux)
     for i, m in enumerate(morceaux[:3]):
         para = re.match(r"\s*<p>(.*?)</p>", m, re.S)
@@ -357,6 +354,26 @@ def retirer_salutation(morceaux: list[str]) -> list[str]:
         morceaux[i] = (nouveau + m[para.end():]).strip()
         break
     return morceaux
+
+
+def retirer_salutation(contenu: str) -> str:
+    """Supprime « Cher abonné, Chère abonnée » dans les premiers paragraphes du texte."""
+    vus = 0
+    def remplace(m):
+        nonlocal vus
+        vus += 1
+        if vus > 5:
+            return m.group(0)
+        lignes = m.group(1).split("<br>")
+        n = len(lignes)
+        while lignes and SALUT_LIGNE.match(html.unescape(re.sub(r"<[^>]+>", "", lignes[0]))):
+            lignes.pop(0)
+        if len(lignes) == n:
+            return m.group(0)
+        reste = re.sub(r"^(\s|<br>)+", "", "<br>".join(lignes).strip())
+        return f"<p>{reste}</p>" if re.sub(r"<[^>]+>|&nbsp;|\s", "", reste) else ""
+    contenu = re.sub(r"<p>(.*?)</p>", remplace, contenu, flags=re.S)
+    return re.sub(r"\n{2,}", "\n", contenu).strip()
 
 
 def chapeau(contenu: str, longueur: int = 170) -> str:
@@ -504,20 +521,18 @@ def main() -> None:
         d.mkdir(parents=True)
         (d / "index.html").write_text(page(cfg, c["titre_aff"], corps, html.unescape(c["chapeau"]), "page-texte"), encoding="utf-8")
 
-    # archives, par année, la plus récente d'abord
-    par_annee: dict[str, list] = {}
-    for c in reversed(retenues):
-        par_annee.setdefault(c["send_time"][:4], []).append(c)
-    sections = []
-    for annee, liste in par_annee.items():
-        items = "\n".join(
-            f"""    <li><a href="/archives/{c['slug']}/"><span class="t">{html.escape(c['titre_aff'])}</span></a></li>"""
-            for c in liste)
-        sections.append(f'<section class="annee"><h2>{annee}</h2>\n  <ul class="liste simple">\n{items}\n  </ul></section>')
+    # archives : tous les titres, du plus récent au plus ancien
+    items = "\n".join(
+        f"""    <li><a href="/archives/{c['slug']}/"><span class="t">{html.escape(c['titre_aff'])}</span></a></li>"""
+        for c in reversed(retenues))
     corps = f"""<header class="intro">
   <h1>Archives</h1>
 </header>
-{''.join(sections)}"""
+<section class="annee">
+  <ul class="liste simple">
+{items}
+  </ul>
+</section>"""
     (OUT / "archives").mkdir(exist_ok=True)
     (OUT / "archives" / "index.html").write_text(page(cfg, "Archives", corps, classe="page-archives"), encoding="utf-8")
 
