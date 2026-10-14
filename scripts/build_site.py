@@ -382,7 +382,10 @@ def retirer_paragraphe(contenu: str, debut: str, titre: str) -> str:
     trouve = False
     def remplace(m):
         nonlocal trouve
-        if not trouve and normalise(html.unescape(re.sub(r"<[^>]+>", "", m.group(1)))).startswith(cle):
+        texte = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip()
+        # un paragraphe sans lettres (« * », « *** ») se compare tel quel
+        correspond = normalise(texte).startswith(cle) if cle else texte == debut.strip()
+        if not trouve and correspond:
             trouve = True
             return ""
         return m.group(0)

@@ -65,6 +65,14 @@
         "Commandez-le pour vous-même",
         "À présent, un récit de voyage"
       ]
+    },
+    {
+      "id": "56f47cf214",
+      "note": "2025-12-28 — Arthurs",
+      "paragraphes_a_retirer": [
+        "L’édition originale de Passer Janvier",
+        "*"
+      ]
     }
   ]
 }
