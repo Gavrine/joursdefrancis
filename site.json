@@ -71,10 +71,6 @@
       "note": "2025-11-30 — Enfin le livre !"
     },
     {
-      "id": "94f6ff973c",
-      "note": "2026-06-23 — Nouveau livre"
-    },
-    {
       "id": "c4e412ef70",
       "note": "2016-08-23 — Jours de Francis !"
     },
@@ -88,6 +84,23 @@
     }
   ],
   "retouches": [
+    {
+      "id": "94f6ff973c",
+      "note": "2026-06-23 — Nouveau livre : seul le récit de Nohant, après les trois étoiles",
+      "titre": "Chopin",
+      "garder_apres": "***",
+      "arreter_avant": "N’oubliez pas le livre",
+      "corrections": [
+        [
+          "après que Barbara m’ait expliqué",
+          "après que Barbara m’eut expliqué"
+        ],
+        [
+          "Bien-sûr",
+          "Bien sûr"
+        ]
+      ]
+    },
     {
       "id": "cd3208c52f",
       "note": "2026-03-06 — Vieux Man",

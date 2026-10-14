@@ -400,6 +400,26 @@ def retirer_paragraphe(contenu: str, debut: str, titre: str) -> str:
     return re.sub(r"\n{2,}", "\n", contenu).strip()
 
 
+def paragraphes(contenu: str) -> list:
+    """Liste des paragraphes <p>…</p> avec leur position et leur texte brut."""
+    return [(m.start(), m.end(), html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip())
+            for m in re.finditer(r"<p>(.*?)</p>", contenu, re.S)]
+
+
+def couper(contenu: str, debut: str, titre: str, garder_apres: bool) -> str:
+    """Garde ce qui suit (ou précède) le premier paragraphe commençant par `debut`.
+
+    garder_apres=True : le paragraphe repère et tout ce qui le précède sont retirés.
+    garder_apres=False : le paragraphe repère et tout ce qui le suit sont retirés.
+    """
+    cle = normalise(debut)[:60]
+    for a, b, texte in paragraphes(contenu):
+        if (normalise(texte).startswith(cle) if cle else texte == debut.strip()):
+            return (contenu[b:] if garder_apres else contenu[:a]).strip()
+    print(f"::warning::Repère introuvable dans « {titre} » : {debut[:60]}")
+    return contenu
+
+
 def chapeau(contenu: str, longueur: int = 170) -> str:
     for p in re.findall(r"<p>(.*?)</p>", contenu, re.S):
         t = html.unescape(re.sub(r"<[^>]+>", " ", p))
@@ -485,10 +505,13 @@ def main() -> None:
     ]
     retenues.sort(key=lambda c: c["send_time"])
 
+    retouches = {r["id"]: r for r in cfg.get("retouches", [])}
+
     # adresses web locales, et correspondance des anciennes URL d'archive Mailchimp
     vus = set()
     for c in retenues:
-        titre = titre_affiche(c["subject"]) or c["title"]
+        titre = (retouches.get(c["id"], {}).get("titre")
+                 or titre_affiche(c["subject"]) or c["title"])
         slug = f"{c['send_time'][:10]}-{slugify(sans_emoji(titre))}"
         while slug in vus:
             slug += "-2"
@@ -509,10 +532,19 @@ def main() -> None:
     communes = {s for s, n in compte.items() if n >= 3}
 
     nettoyeur = Nettoyeur(liens)
-    retouches = {r["id"]: r for r in cfg.get("retouches", [])}
     for c in retenues:
         brut = (RAW / f"{c['file']}.html").read_text(encoding="utf-8")
         c["contenu"] = extraire(brut, c["subject"], nettoyeur, communes)
+        r = retouches.get(c["id"], {})
+        # « garder_apres » : repère (souvent « *** ») après lequel commence le texte
+        if r.get("garder_apres"):
+            c["contenu"] = couper(c["contenu"], r["garder_apres"], c["titre_aff"], True)
+        if r.get("arreter_avant"):
+            c["contenu"] = couper(c["contenu"], r["arreter_avant"], c["titre_aff"], False)
+        for avant, apres in r.get("corrections", []):
+            if avant not in c["contenu"]:
+                print(f"::warning::Correction introuvable dans « {c['titre_aff']} » : {avant[:60]}")
+            c["contenu"] = c["contenu"].replace(avant, apres)
         for debut in retouches.get(c["id"], {}).get("paragraphes_a_retirer", []):
             c["contenu"] = retirer_paragraphe(c["contenu"], debut, c["titre_aff"])
         c["chapeau"] = chapeau(c["contenu"])
