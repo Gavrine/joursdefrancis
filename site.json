@@ -15,6 +15,11 @@
     "texte": "Le premier volume de Jours de Francis, aux éditions du Nénufar.",
     "lien": "https://lenenufar.fr/produit/passer-janvier/"
   },
+  "images": {
+    "chien.jpeg": "https://joursdefrancis.fr/wp-content/uploads/2024/02/dog_jdf.jpeg",
+    "couverture.jpg": "https://joursdefrancis.fr/wp-content/uploads/2026/04/VIGNETTE_NENUFAR_JDF_1COUV_01-593x1024.jpg",
+    "couverture-hd.jpg": "https://joursdefrancis.fr/wp-content/uploads/2026/04/VIGNETTE_NENUFAR_JDF_1COUV_01.jpg"
+  },
   "exclues": [
     {
       "id": "136511533d",
